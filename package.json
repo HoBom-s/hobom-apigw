@@ -1,0 +1,11 @@
+{
+  "name": "hobom-api-gateway",
+  "description": "HoBom's API Gateway",
+  "repository": {},
+  "license": "UNLICENSED",
+  "version": "1.0.0",
+  "main": "server.js",
+  "dependencies": {
+    "express-gateway": "^1.16.11"
+  }
+}

@@ -1,0 +1,30 @@
+http:
+  port: 8080
+
+apiEndpoints:
+  furchanceApi:
+    host: localhost
+    paths: '/api/furchance/*'
+    
+serviceEndpoints:
+  furchance:
+    url: 'https://furchance-server'
+
+policies:
+  - basic-auth
+  - cors
+  - expression
+  - key-auth
+  - log
+  - proxy
+  - rate-limit
+
+pipelines:
+  furchancePipeline:
+    apiEndpoints:
+      - furchanceApi
+    policies:
+      - proxy:
+          - action:
+              serviceEndpoint: furchance
+              changeOrigin: true
